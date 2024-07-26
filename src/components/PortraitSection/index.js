@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import Typewriter from "typewriter-effect";
-import AboutImg from "../../images/MyImage.jpg";
-import AboutBgAnimation from "../AboutBgAnimation";
+import PortraitImg from "../../images/MyImage.jpg";
+import PortraitBgAnimation from "../PortraitBgAnimation";
 
 
-const AboutContainer = styled.div`
+const PortraitContainer = styled.div`
 background-color: ${({ theme }) => theme.card_light};
 display: flex;
 justify-content: center;
@@ -25,7 +25,7 @@ z-index: 1;
 clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
 
-export const AboutBg = styled.div`
+export const PortraitBg = styled.div`
   position: absolute;
   display: flex;
   justify-content: end;
@@ -49,7 +49,7 @@ export const AboutBg = styled.div`
   }
 `;
 
-export const AboutInnerContainer = styled.div`
+export const PortraitInnerContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -61,7 +61,7 @@ export const AboutInnerContainer = styled.div`
     flex-direction: column;
   }
 `;
-export const AboutLeftContainer = styled.div`
+export const PortraitLeftContainer = styled.div`
   width: 100%;
   order: 1;
   @media (max-width: 960px) {
@@ -81,7 +81,7 @@ export const AboutLeftContainer = styled.div`
   }
 `;
 
-export const AboutRightContainer = styled.div`
+export const PortraitRightContainer = styled.div`
   width: 100%;
   display: flex;
   order: 2;
@@ -209,15 +209,15 @@ export const Image = styled.img`
   }
 `;
 
-const About = () => {
+const PortraitSection = () => {
     return(
         <div id="about">
-            <AboutContainer>
-                <AboutBg>
-                    <AboutBgAnimation />
-                </AboutBg>
-                <AboutInnerContainer>
-                    <AboutLeftContainer>
+            <PortraitContainer>
+                <PortraitBg>
+                    
+                </PortraitBg>
+                <PortraitInnerContainer>
+                    <PortraitLeftContainer>
                         <Title>Hi, I am 
                             <br/>{Bio.name}
                         </Title>
@@ -237,14 +237,14 @@ const About = () => {
                         <ResumeButton href={Bio.resume} target="display">
                             Check Resume
                         </ResumeButton>
-                    </AboutLeftContainer>
-                    <AboutRightContainer>
-                        <Image src={AboutImg} alt="Kishan Patel" />
-                    </AboutRightContainer>
-                </AboutInnerContainer>
-            </AboutContainer>   
+                    </PortraitLeftContainer>
+                    <PortraitRightContainer>
+                        {/* <Image src={PortraitImg} alt="Kishan Patel" /> */}
+                    </PortraitRightContainer>
+                </PortraitInnerContainer>
+            </PortraitContainer>   
         </div>
     )
 };
 
-export default About;
+export default PortraitSection;
