@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { DiCssdeck } from "react-icons/di";
 import { FaBars } from "react-icons/fa";
 import { useTheme } from "styled-components";
+import { Bio } from "../../data/constants";
 
 const Nav = styled.div`
     background-color: ${({ theme }) => theme.card_light};
@@ -93,8 +94,7 @@ const ButtonContainer = styled.div`
     }
 `;
 
-const GithubButton
- = styled.button`
+const GithubButton = styled.a`
     background-color: transparent;
     color: ${({ theme }) => theme.primary};
     border: 1.8px solid ${({ theme }) => theme.primary};
@@ -107,6 +107,7 @@ const GithubButton
     font-weight: 500;
     cursor: pointer;
     height: 70%;
+    text-decoration: none;
     :hover{
         background-color: ${({ theme }) => theme.primary};
         color: ${({ theme }) => theme.white};
@@ -157,6 +158,9 @@ color: ${({ theme}) => theme.primary}
 const Navbar = () => {
     const [open, setOpen] = React.useState(false);
     const theme = useTheme();
+
+    console.log("GitHub URL: ", Bio.github);
+
     return (
     <Nav>
         <NavContainer>
@@ -188,9 +192,9 @@ const Navbar = () => {
                 
             </NavItems>
             <ButtonContainer>
-                <GithubButton
-                >Github Profile</GithubButton
-                >
+                <GithubButton href={Bio.github} target="_blank">
+                    Github Profile
+                </GithubButton>
             </ButtonContainer>
         </NavContainer>
         {
@@ -247,8 +251,7 @@ const Navbar = () => {
                     target="_blank"
                 >
                     Github Profile
-                    </GithubButton
-                    >
+                    </GithubButton>
                 </MobileMenu>
             )
         }
